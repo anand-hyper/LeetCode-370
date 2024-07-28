@@ -3,14 +3,12 @@ public:
     vector<int> getConcatenation(vector<int>& nums) {
      
      vector<int>answer;
-     for(int i=0;i<nums.size();i++)
+     int len = nums.size();
+     for(int i=0;i<len*2;i++)
      {
-            answer.emplace_back(nums[i]);
+            answer.emplace_back(nums[i%len]);
      }
-      for(int i=0;i<nums.size();i++)
-     {
-         answer.emplace_back(nums[i]);
-     }
+   
      return answer;
     }
 };
