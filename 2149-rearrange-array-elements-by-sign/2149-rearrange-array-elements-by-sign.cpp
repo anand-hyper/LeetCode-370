@@ -3,7 +3,6 @@ public:
     vector<int> rearrangeArray(vector<int>& nums) {
         vector<int>pos;
         vector<int>neg;
-        vector<int>ans;
         for(auto num : nums)
         {
             if(num > 0)
@@ -17,9 +16,9 @@ public:
         }
         for(int i=0;i<nums.size()/2;i++)
         {
-            ans.push_back(pos[i]);
-            ans.push_back(neg[i]);
+            nums[2*i] = pos[i];
+            nums[2*i+1] = neg[i];
         }
-       return ans;
+       return nums;
     }
 };
