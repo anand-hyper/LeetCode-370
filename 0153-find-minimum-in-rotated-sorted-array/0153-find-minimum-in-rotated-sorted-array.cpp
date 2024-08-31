@@ -7,11 +7,10 @@ public:
         bool istrue = is_sorted(nums.begin(),nums.end()); 
         if(istrue == true)
         {
-            ans = nums[0];
+            return nums[0];
             
         }
-        else
-        {
+        
         while(left<right)
         {
             int mid = (left+right)/2;
@@ -22,16 +21,17 @@ public:
             {
                 right = mid;
             }
-            else if(left==mid)
+            else 
             {  
-                ans= nums[right];
-                break;
+                left = mid+1;
             }
-            else  left = mid;
             
             
+            
+        
+             
         }
-        }
-        return ans;
+        return nums[left];
+        
     }
 };
