@@ -1,37 +1,29 @@
 class Solution {
 public:
     int findMin(vector<int>& nums) {
-        int n = nums.size();
-        int left =0,right = n-1;
-        int ans =0;
-        bool istrue = is_sorted(nums.begin(),nums.end()); 
-        if(istrue == true)
+
+        int mini = INT_MAX;
+        int mid =0;
+        int left =0, right = nums.size()-1;
+        while(left<=right)
         {
-            return nums[0];
+            mid = (left+right)/2;
             
-        }
-        
-        while(left<right)
-        {
-            int mid = (left+right)/2;
-            
-               
-            
-            if(nums[mid]<nums[right])
+            if(nums[left]<=nums[mid])
             {
-                right = mid;
+                mini = min(mini,nums[left]);
+                left = mid + 1;
+                
             }
             else 
-            {  
-                left = mid+1;
+            {
+                mini = min(mini,nums[mid]);
+                right = mid-1;
             }
             
             
-            
-        
-             
         }
-        return nums[left];
+        return mini;
         
     }
 };
