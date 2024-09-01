@@ -6,12 +6,15 @@ public:
         
         for(int i=0;i<len;i++)
         {
-            string s = to_string(nums[i]);
-            int l = s.length();
-            if(l%2 == 0)
+            int num = nums[i];
+            int count = 0;
+            while(num>0)
             {
-                ans+=1;
+                num = num/10;
+                count++;
             }
+            if(count%2==0) ans+=1;
+            
         }
         return ans;
     }
