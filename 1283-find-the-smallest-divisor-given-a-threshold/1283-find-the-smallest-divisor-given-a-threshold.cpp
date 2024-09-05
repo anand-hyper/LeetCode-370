@@ -5,13 +5,12 @@ public:
         
          int maxi = *(max_element(nums.begin(),nums.end()));
          int low = 1 , high = maxi;
-         int ans = 0;
          int n = nums.size();
          while(low<=high)
          {
              int mid = (low+high)/2;
              
-              int sum = 0;
+                int sum = 0;
              
                 for(int i=0;i<n;i++)
                 {
@@ -19,7 +18,6 @@ public:
                 }
                 if(sum<=threshold)
                 {
-                     ans = mid;
                      high = mid-1;
                 }
                 else 
