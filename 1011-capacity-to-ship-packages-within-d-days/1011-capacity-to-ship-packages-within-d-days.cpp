@@ -26,14 +26,14 @@ public:
         }
         int low = *(max_element(weights.begin(),weights.end()));
         int high = sum;
-        int ans=0;
+       
         while(low<=high)
         {
             int mid = (low+high)/2;
             int nod = nofdays(weights,mid);
             if(nod<=days)
             {
-                ans = mid;
+                
                 high = mid-1;
             }
             else 
@@ -43,6 +43,6 @@ public:
             }
             
         }
-        return ans;
+        return low;
     }
 };
